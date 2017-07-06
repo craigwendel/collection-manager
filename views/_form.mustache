@@ -1,0 +1,39 @@
+  <div class="film-title">
+    <label for="name">Film Title:</label>
+    <input type="text" name="name" value="{{film.name}}">
+    {{#validationError.errors.name}}
+      The film name is required.
+    {{/validationError.errors.name}}
+  </div>
+  <div class="main-actor">
+    <label for="mainActor">Main Actor:</label>
+    <input type="text" name="mainActor" value="{{film.mainActor}}">
+  </div>
+  <div class="supportingActor">
+    <label for="supportingActor">Supporting Actor:</label>
+    <input type="text" name="supportingActor" value="{{film.supportingActor}}">
+  </div>
+  <div class="imageURL">
+    <label for="image">ImageURL</label>
+    <input type="text" name="imageURL" value="{{film.imageURL}}">
+    {{#validationError.errors.imageURL}}
+      The imageURL is required.
+    {{/validationError.errors.imageURL}}
+  </div>
+  <div class="year">
+    <label for="year">Year</label>
+    <input type="text" name="year" value="{{film.year}}">
+    {{#validationError.errors.year}}
+      The year must be between 1990 and 1999.
+    {{/validationError.errors.year}}
+  </div>
+  <div class="link">
+    <label for="link">IMDB Link</label>
+    <input type="text" name="link" value="{{film.link}}">
+    {{#validationError.errors.link}}
+      The film link from IMDB is required.
+    {{/validationError.errors.link}}
+  </div>
+  <div class="">
+  <input type="submit" name="submitted" value="Submit!">
+  </div>

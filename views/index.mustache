@@ -1,0 +1,31 @@
+  <h1>90's Films...that ROCK!</h1>
+    <h3><a href="/newfilm">Submit a new film:</a></h3>
+      <h3>Here are my 90's favorite films in order by their year:</h3>
+        <div class="film-list">
+          {{#films}}
+          <div class="films">
+          <div class="title">
+            <a href="{{link}}">{{name}}
+          </div>
+          <div class="edit-film">
+            <a href="/{{_id}}/edit">Edit</a>
+            <a href="/{{_id}}/delete">Delete</a>
+          </div>
+          <div class="image">
+            <img src="{{imageURL}}" alt="{{name}}">
+            </a>
+          </div>
+          <div class="">
+            <p>
+              {{year}}
+            </p>
+          </div>
+          <div class="actors">
+            {{#actors}}
+              <p>Main Actor: {{mainActor}}</p>
+              <p>Supporting Actor: {{supportingActor}}</p>
+            {{/actors}}
+          </div>
+          </div>
+          {{/films}}
+        </div>
