@@ -29,15 +29,14 @@ router.post('/newfilm', function (req, res) {
 
 router.get('/:id/edit', function (req, res){
   Film.findOne({'_id': req.params.id})
-  .then(function (films, actors) {
+  .then(function (film) {
     res.render('edit', {
-      films: films,
-      actors: actors
+      film: film
     })
   })
 })
 
-router.post('/:id', function (req,res) {
+router.post('/films/:id', function (req,res) {
   Film.findOne({'_id': req.params.id})
   .then(function (film) {
     film.name = req.body.name
@@ -60,10 +59,12 @@ router.post('/:id', function (req,res) {
   })
 })
 
-router.post('/:id/delete', function (req, res) {
+router.get('/:id/delete', function (req, res) {
   Film.deleteOne({'_id': req.params.id})
   .then(function (film) {
     res.redirect('/')
+  }).catch(function (error) {
+    console.log('There was an error deleting your item')
   })
 })
 
